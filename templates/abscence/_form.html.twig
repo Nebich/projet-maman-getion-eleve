@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="btn-group">
+    {% if abscence.student %}
+        <a href="{{ path('abscence_index', {'id': abscence.student.id}) }}" class="btn btn-danger"><i class="bi bi-arrow-left"></i> Retour</a>
+    {% else %}
+        <a href="{{ path('abscence_index', {"id": student.id}) }}" class="btn btn-danger"><i class="bi bi-arrow-left"></i> Retour</a>
+    {% endif %}
+        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}

@@ -1,0 +1,11 @@
+<header class="bg-dark p-3">
+    <nav class=" d-flex justify-content-around w-100">
+        {% if is_granted( 'ROLE_ADMIN' ) %}
+        <a href="{{path('user_index')}}" class="nav-item text-decoration-none text-white fs-5">Liste des utilisateurs</a>
+        {% endif %}
+        {% if is_granted( 'IS_AUTHENTICATED_FULLY' ) %}
+        <a href="{{path('group_index')}}" class="nav-item text-decoration-none text-white fs-5">Liste des classes</a>
+        {% endif %}
+        <a href="{{ path('app_logout') }}" class="btn btn-danger"><i class="bi bi-door-open-fill"></i> Déconnexion</a>
+    </nav>
+</header>

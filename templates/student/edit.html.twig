@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Édition d'un élève{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1>Éditer un élève</h1>
+    {{ include('student/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+</div>
+
+{% endblock %}

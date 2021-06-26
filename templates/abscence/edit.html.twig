@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Édition d'une abscenc{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1>Édition d'une abscence</h1>
+
+    {{ include('abscence/_form.html.twig', {'button_label': 'Update'}) }}
+</div>
+{% endblock %}

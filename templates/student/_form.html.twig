@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <label>Classe :</label>
+    <select class="form-select mt-3" style="width: 10%">
+        {% for group in groups %}
+        <option {% if student.studentGroup %} {% if group.Name == student.studentGroup.Name %} selected {% endif %}{% endif %}> {{group.Name}} </option>
+        {% endfor %}
+    </select>
+    <div class="btn-group mt-3">
+    {% if student.studentGroup %}
+        <a href="{{ path('student_index', {"id": student.studentGroup.id}) }}" class="btn btn-danger "><i class="bi bi-arrow-left"></i> Retour</a>
+    {% else %}
+        <a href="{{ path('student_index', {"id": group.id}) }}" class="btn btn-danger "><i class="bi bi-arrow-left"></i> Retour</a>
+    {% endif %}
+        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}
